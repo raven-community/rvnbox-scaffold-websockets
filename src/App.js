@@ -41,13 +41,13 @@ const Title = styled.h1`
   text-shadow: 2px 2px 4px #000;
 `
 
-// converts legacy addresses to rvn2addr and returns an array
+// converts legacy addresses to Legacyaddr and returns an array
 const getOutputAddresses = (outputs) => {
   const addresses = outputs.reduce((prev, curr, idx) => {
     const addressArray = curr.scriptPubKey.addresses;
 
-    // converts legacy address to rvn2addr
-    const value = RVNBOX.RavenCoin.toRvn2(curr.corbe);
+    // converts legacy address to Legacyaddr
+    const value = RVNBOX.RavenCoin.toLegacy(curr.corbe);
 
     const ret = addressArray.reduce((prev, curr, idx) => {
       return { ...prev, [curr]: { value } }
@@ -143,11 +143,11 @@ class App extends Component {
           {donationAddresses.map((address, i) => {
             const donation = donations[address]
 
-            // converts legacy address to rvn2addr and passes to donation component for display
-            const rvn2addr = RVNBOX.Address.toRvn2Address(address)
+            // converts legacy address to Legacyaddr and passes to donation component for display
+            const addr = RVNBOX.Address.toLegacyAddress(address)
 
             return (
-              <Donation key={i} donation={donation} address={rvn2addr} />
+              <Donation key={i} donation={donation} address={addr} />
             )
           })}
         </Container>
