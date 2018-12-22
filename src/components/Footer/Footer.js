@@ -2,8 +2,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import bitboxLogo from '../../assets/rvnbox-logo.png'
-import bitcoincomLogo from '../../assets/ravencoin-logo-white.png'
+import rvnboxLogo from '../../assets/rvnbox-logo.png'
+import ravencoinonlineLogo from '../../assets/ravencoin-logo-white.png'
 
 const Wrapper = styled.div`
     width: 100%;
@@ -67,12 +67,12 @@ class Footer extends React.Component {
         return (
             <Wrapper>
                 <PoweredBy>
-                    <Image src={rvnboxLogo} alt="BITBOX" height="50" />
+                    <Image src={rvnboxLogo} alt="RVNBOX" height="50" />
                     <PoweredByTitle>Powered by RVNBOX<br />developer.ravencoin.online</PoweredByTitle>
                 </PoweredBy>
                 <Sponsors>
                     <SponsorLogos>
-                        <SponsorsImage src={bitcoincomLogo} alt="RVNBOX" />
+                        <SponsorsImage src={ravencoinonlineLogo} alt="RVNBOX" />
                     </SponsorLogos>
                 </Sponsors>
             </Wrapper>)
