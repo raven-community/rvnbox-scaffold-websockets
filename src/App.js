@@ -47,7 +47,7 @@ const getOutputAddresses = (outputs) => {
     const addressArray = curr.scriptPubKey.addresses;
 
     // converts legacy address to Legacyaddr
-    const value = RVNBOX.RavenCoin.toLegacy(curr.corbe);
+    const value = RVNBOX.RavenCoin.toLegacy(curr.satoshi);
 
     const ret = addressArray.reduce((prev, curr, idx) => {
       return { ...prev, [curr]: { value } }
