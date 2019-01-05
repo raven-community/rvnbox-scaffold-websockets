@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import * as RVNBOXCli from 'rvnbox-sdk/lib/rvnbox-sdk'
+import * as RVNBOXSDK from 'rvnbox-sdk/lib/rvnbox-sdk'
 
 import Donation from './components/Donation'
 import Footer from './components/Footer'
 import { donations as initDonations } from './donations'
 
 // initialise RVNBOX
-const RVNBOX = new RVNBOXCli.default()
+const RVNBOX = new RVNBOXSDK.default()
 
 // initialise socket connection
 const socket = new RVNBOX.Socket()
